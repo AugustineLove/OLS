@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Page</title>
+    <link rel="stylesheet" href="orderstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+           <!-- navbar -->
+        <nav class="navbar">
+            <!-- logo -->
+            <img src="img/logo.png" class="logo" alt="">
+
+            <!-- links -->
+            <ul class="links-container">
+                <li class="link-items"><a href="index.html" class="links">menu</a></li>
+                <li class="link-items"><a href="ordering.html" class="links">order</a></li>
+                <li class="link-items"><a href="#" class="links">restaurants</a></li>
+                <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
+            </ul>
+
+            <div class="nav-extras">
+                <!-- search box -->
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="Search Restaurants, Cuisine.....">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <!-- cart icon -->
+                <a href="ordering.html" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        </header>
+
+        <nav class="category-nav">
+            <button class="category-btn active">
+                <img src="orderimg/food-2.png" alt="All">
+                All
+            </button>
+            <button class="category-btn">
+                <img src="orderimg/pizza-pan.png" alt="Pizza">
+                Pizza
+            </button>
+            <button class="category-btn">
+                <img src="orderimg/hero-burger.png" alt="Burger">
+                Burger
+            </button>
+            <button class="category-btn">
+                <img src="orderimg/spark.png" alt="Noddles">
+                Noddles
+            </button>
+            <button class="category-btn">
+                <img src="orderimg/food-1.png" alt="Meat">
+                Meat
+            </button>
+            <button class="category-btn">
+                <img src="orderimg/chicken.png" alt="Chicken1">
+                chicken
+            </button>
+            <button class="category-btn">
+                <img src="orderimg/discount-food-slider-1.png" alt="Pasta">
+                Pasta
+            </button>
+        </nav>
+
+        <main>
+            <section class="popular-dishes">
+                <h2>Popular dishes</h2>
+                <div class="dishes">
+                    <div class="dish" data-name="Hero-Pizza" data-price="95" >
+                        <img src="orderimg/hero-pizza.png" alt="hero-pizza">
+                        <h3>hero-pizza</h3>
+                        <p>GH₵ 95 ★</p>
+                        <p>Restaurant A</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Pizza Margherita" data-price="100">
+                        <img src="orderimg/pizza-pan.png " alt="Pizza Margherita">
+                        <h3>Pizza Margherita</h3>
+                        <p>GH₵ 100 ★★★★</p>
+                        <p>Restaurant B</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Ganish Gilled meat" data-price="60">
+                        <img src="orderimg/meat.png" alt="Chicken">
+                        <h3>ganish Gilled Meat</h3>
+                        <p>GH₵ 60 ★★★</p>
+                        <p>Restaurant c</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="chicken" data-price="80">
+                        <img src="orderimg/chicken.png" alt="Chicken">
+                        <h3>Chicken</h3>
+                        <p>GH₵ 80 ★</p>
+                        <p>Restaurant D</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Fried-rice" data-price="100" >
+                        <img src="orderimg/hero-biryani.png" alt="Friedrice">
+                        <h3>Friedrice</h3>
+                        <p>GH₵ 100 ★</p>
+                        <p>Restaurant D</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Burger" data-price="55">
+                        <img src="orderimg/hero-biryani1.png" alt="burger">
+                        <h3>Burger</h3>
+                        <p>GH₵ 55 ★★</p>
+                        <p>Restaurant D</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Starter" data-price="70">
+                        <img src="orderimg/food-2.png" alt="Pizza Margherita">
+                        <h3>Starter</h3>
+                        <p>GH₵ 70 ★★</p>
+                        <p>Restaurant E</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Jollof-rice" data-price="150" >
+                        <img src="orderimg/jollof-rice.png" alt="Pizza Margherita">
+                        <h3>Jollof-rice and Chicken</h3>
+                        <p>GH₵ 150 ★</p>
+                        <p>Restaurant F</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="dish" data-name="Pasta" data-price="120">
+                        <img src="orderimg/discount-food-slider-1.png" alt="Pizza Margherita">
+                        <h3>Pasta</h3>
+                        <p>GH₵ 120 ★★★★</p>
+                        <p>Restaurant D</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="order-summary">
+                <h2>My order</h2>
+                <div class="delivery-location">
+                    <input type="text" id="delivery-location" placeholder="Enter your delivery location">
+                </div>
+                <ul id="cart-items"></ul>
+                <div class="total">
+                    <p>Total Amount: <span id="total-amount">GH₵0</span></p>
+                </div>
+                <div class="payment-method">
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method">
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="mobile-money">Mobile Money</option>
+                    </select>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            
+                
+            </aside>
+        </main>
+    </div>
+
+    <script src="orderscript.js"></script>
+</body>
+</html>
