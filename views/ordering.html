@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Page</title>
+    <link rel="stylesheet" href="../styles/orderstyle.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+   
+           <!-- navbar -->
+            <nav class="navbar">
+                <!-- logo -->
+                <img src="../img/logo.png" class="logo" alt="">
+
+                <!-- links -->
+                <ul class="links-container">
+                    <li class="link-items"><a href="index.html" class="links">menu</a></li>
+                    <li class="link-items"><a href="ordering.html" class="links">order</a></li>
+                    <li class="link-items"><a href="restaurants.html" class="links">restaurants</a></li>
+                    <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
+                </ul>
+
+                <div class="nav-extras">
+                    <!-- search box -->
+                    <div class="search">
+                        <input type="text" class="search-box" placeholder="Search Restaurants, Cuisine.....">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+
+                    <!-- cart icon -->
+                    <a href="ordering.html" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                    <div class="nav-toggler">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+
+        <div id="nav"></div>
+        <h2 class="dishPageTitle">Popular dishes</h2><br>
+        <div class="dishContainer">
+                <div id="dish"></div>
+
+
+            <aside class="order-summary">
+                <h2>My order</h2>
+                <div class="delivery-location">
+                    <input type="text" id="delivery-location" placeholder="Enter your delivery location">
+                </div>
+                <ul id="cart-items"></ul>
+                <div class="total">
+                    <p>Total Amount: <span id="total-amount">GH₵0</span></p>
+                </div>
+                <div class="payment-method">
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method">
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="mobile-money">Mobile Money</option>
+                    </select>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </aside>
+        </div>
+    
+
+    
+
+    
+    
+    <footer id="footer"></footer>
+    
+
+    <script>
+        function dishFun (dishes){
+            const dish = document.createElement('div');
+            dish.className = 'dishes';
+
+            const aDish = document.createElement('div');
+            aDish.className = 'dish';
+            
+
+            const aDishContent = `
+                        <img src="../img/${dishes.imageUrl}" alt="hero-pizza">
+                        <h3>${dishes.header}</h3>
+                        <p>GH₵ ${dishes.price} ★</p>
+                        <p>${dishes.name}</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+            `;
+            aDish.innerHTML = aDishContent;
+
+            dish.appendChild(aDish);
+            document.getElementById("dish").appendChild(dish);
+        }
+        
+
+
+        function category (categoryItem) {
+
+            const nav = document.createElement("nav");
+            nav.className ="category-nav";
+
+            const categoryBtn = document.createElement("button");
+            categoryBtn.className = "category-btn active";
+            
+            const categoryBtnContent = `
+            <img src="../img/${categoryItem.imageUrl}" alt="All">
+                ${categoryItem.label}
+            `;
+            categoryBtn.innerHTML = categoryBtnContent;
+
+            nav.appendChild(categoryBtn);
+            document.getElementById("nav").appendChild(nav);
+        }
+
+        const dishes = [
+        {
+            imageUrl: "hero-pizza.png",
+            header: "hero-pizza",
+            price: "95",
+            name: "Restaurant A"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "Kivo",
+            price: "5",
+            name: "Variety Store"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "hero-pizza",
+            price: "95",
+            name: "Restaurant A"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "Kivo",
+            price: "5",
+            name: "Variety Store"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "hero-pizza",
+            price: "95",
+            name: "Restaurant A"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "Kivo",
+            price: "5",
+            name: "Variety Store"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "hero-pizza",
+            price: "95",
+            name: "Restaurant A"
+        },
+        {
+            imageUrl: "hero-pizza.png",
+            header: "Kivo",
+            price: "5",
+            name: "Variety Store"
+        },
+        ];
+
+        const categories = [
+            {
+                imageUrl: "food-2.png",
+                label: "All"
+            },
+            {
+                imageUrl: "pizza-pan.png",
+                label: "Pizza"
+            },
+            {
+                imageUrl: "hero-burger.png",
+                label: "Burger"
+            },
+            {
+                imageUrl: "food-1.png",
+                label: "Noddles"
+            },
+        ]
+
+
+        categories.forEach(cat => category(cat));
+        dishes.forEach(dish => dishFun(dish));
+
+    </script>
+
+    <script src="../components/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const footer = new Footer();
+            footer.render();
+        });
+
+</script>
+
+    
+
+    <script src="orderscript.js"></script>
+</body>
+</html>

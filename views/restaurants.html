@@ -11,7 +11,7 @@
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
  
      <!-- local CSS files -->
-     <link rel="stylesheet" href="/complete projrct/style.css">
+     <link rel="stylesheet" href="/complete projrct/styles/index.css">
      <link rel="stylesheet" href="/complete projrct/styles/restaurants.css">
 </head>
 <body>
@@ -23,9 +23,9 @@
 
         <!-- links -->
         <ul class="links-container">
-            <li class="link-items"><a href="#" class="links">menu</a></li>
+            <li class="link-items"><a href="index.html" class="links">menu</a></li>
             <li class="link-items"><a href="ordering.html" class="links">order</a></li>
-            <li class="link-items"><a href="./views/restaurants.html" class="links">restaurants</a></li>
+            <li class="link-items"><a href="restaurants.html" class="links">restaurants</a></li>
             <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
         </ul>
 
@@ -49,12 +49,157 @@
 
     <!-- Resturant cards -->
     <div class="restaurantsBackground">
-
-        <div class="shopVendor">
-<p>hello</p>
+        <div class="coverContent">
+            <h1>Browse Restaurants</h1>
+            <p>choose your favorite restaurant</p>
         </div>
-
     </div>
+
+    <div class="marqueText"><marquee behavior="" direction="">Check some outstanding restaurants</marquee></div>
     
+        <div id="shopContainer"></div>  
+           
+
+    <script>
+        function createShopVendor(shop) {
+            // Create the main shopVendor div
+            const shopVendor = document.createElement('div');
+            shopVendor.className = 'shopVendor';
+    
+            // Create the shopDetails div
+            const shopDetails = document.createElement('div');
+            shopDetails.className = 'shopDetails';
+    
+            // Create the shop details content
+            const shopContent = `
+                <div>
+                    <h1 class="shopName">${shop.name}</h1>
+                    <p>${shop.address}</p>
+                    <p>${shop.cuisine}</p>
+                    <p>Contact number : ${shop.contact}</p>
+                    <p>Delivery Est: ${shop.deliveryEst}</p>
+                    <p>Delivery Distance : ${shop.deliveryDistance}</p>
+                    <p>Delivery Fee: ${shop.deliveryFee}</p>
+                </div>
+                <button class="viewShopButton">View Shop</button>
+            `;
+    
+            shopDetails.innerHTML = shopContent;
+    
+            // Create the shopThumbnail div
+            const shopThumbnail = document.createElement('div');
+            shopThumbnail.className = 'shopThumbnail';
+            const img = document.createElement('img');
+            img.src = shop.imgSrc;
+            img.className = 'restaurant-img';
+            img.alt = '';
+            shopThumbnail.appendChild(img);
+    
+            // Append shopDetails and shopThumbnail to shopVendor
+            shopVendor.appendChild(shopDetails);
+            shopVendor.appendChild(shopThumbnail);
+    
+            // Append shopVendor to the container
+            document.getElementById('shopContainer').appendChild(shopVendor);
+        }
+    
+        // Sample shop data
+        const shops = [
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            {
+                name: 'Shalom Fast Food',
+                address: '10th clise Dansoman Accra Greater Accra 0558382783',
+                cuisine: 'Ghanaian, African',
+                contact: '0302907709',
+                deliveryEst: 'not available',
+                deliveryDistance: '50.0',
+                deliveryFee: 'Free Delivery',
+                imgSrc: '../img/restaurant-2.png'
+            },
+            // Add more shops as needed
+        ];
+    
+        // Render the shopVendor divs
+        shops.forEach(shop => createShopVendor(shop));
+    </script>
+
+
+<script src="../components/footer.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const footer = new Footer();
+        footer.render();
+    });
+</script>
+
 </body>
 </html>

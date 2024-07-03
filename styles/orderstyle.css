@@ -379,6 +379,13 @@ body.dark-mode .checkout-btn {
     background-color:black;
 }
 
+#nav {
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
 main {
     background-color: var(--secondary-text-color);
     display: flex;
@@ -386,13 +393,28 @@ main {
     width: 100%;
 }
 
-.popular-dishes {
-    flex: 2;
+.dishPageTitle {
+    text-align: center;
+}
+
+.dishContainer{
+    display: flex;
+}
+
+#dish {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2%;
+    row-gap: 40px;
+    margin: 0px 20px 40px 20px;
 }
 
 .dishes {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    height: 350px;
 }
 
 .dish {
@@ -400,13 +422,14 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: calc(33.333% - 40px);
+    width: 100%;
     box-sizing: border-box;
     text-align: center;
+    height: 100%;
 }
 
 .dish img {
-    max-width: 100%;
+    max-width: 60%;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -633,11 +656,6 @@ main {
 
     .category-nav {
         flex-wrap: wrap;
-    }
-
-    main {
-        flex-direction: column;
-        align-items: center;
     }
 
     .order-summary {
