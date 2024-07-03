@@ -89,3 +89,8 @@ class Footer {
         document.body.appendChild(this.footer); // Appends the footer to the body or another element
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const footer = new Footer();
+    footer.render();
+});

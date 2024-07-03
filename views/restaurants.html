@@ -17,35 +17,7 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar">
-        <!-- logo -->
-        <img src="/complete projrct/img/logo.png" class="logo" alt="">
-
-        <!-- links -->
-        <ul class="links-container">
-            <li class="link-items"><a href="index.html" class="links">menu</a></li>
-            <li class="link-items"><a href="ordering.html" class="links">order</a></li>
-            <li class="link-items"><a href="restaurants.html" class="links">restaurants</a></li>
-            <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
-        </ul>
-
-        <div class="nav-extras">
-            <!-- search box -->
-            <div class="search">
-                <input type="text" class="search-box" placeholder="Search Restaurants, Cuisine.....">
-                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-
-            <!-- cart icon -->
-            <a href="ordering.html" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
-            <div class="nav-toggler">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    
 
     <!-- Resturant cards -->
     <div class="restaurantsBackground">
@@ -194,12 +166,7 @@
 
 
 <script src="../components/footer.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const footer = new Footer();
-        footer.render();
-    });
-</script>
+<script src="../components/navBar.js"></script>
 
 </body>
 </html>
