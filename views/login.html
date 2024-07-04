@@ -475,33 +475,33 @@
             <div class="select_form_option" id="select_form_option">
                 <div class="user_forms-login">
                     <h2 class="forms_title">Sign in</h2>
-                    <form class="forms_form">
+                    <form id="loginForm" class="forms_form">
                         <div class="forms_fieldset">
                             <div class="forms_field">
-                                <input type="email" placeholder="Email" class="forms_field-input" required autofocus />
+                                <input id="email" type="email" placeholder="Email" class="forms_field-input" required autofocus />
                             </div>
                             <div class="forms_field">
-                                <input type="password" placeholder="Password" class="forms_field-input" required />
+                                <input id="password" type="password" placeholder="Password" class="forms_field-input" required />
                             </div>
                         </div>
                         <div class="forms_buttons">
                             <button type="button" class="forms_buttons-forgot">Forgot password?</button>
-                            <input type="submit" value="Log In" class="forms_buttons-action">
+                            <input type="submit" value="LogIn" class="forms_buttons-action">
                         </div>
                     </form>
                 </div>
                 <div class="user_forms-signup">
                     <h2 class="forms_title">Sign Up</h2>
-                    <form class="forms_form">
+                    <form id="signUpForm" class="forms_form">
                         <div class="forms_fieldset">
                             <div class="forms_field">
-                                <input type="text" placeholder="Full Name" class="forms_field-input" required />
+                                <input id="fullName" type="text" placeholder="Full Name" class="forms_field-input" required />
                             </div>
                             <div class="forms_field">
-                                <input type="email" placeholder="Email" class="forms_field-input" required />
+                                <input id="signUpEmail" type="email" placeholder="Email" class="forms_field-input" required />
                             </div>
                             <div class="forms_field">
-                                <input type="password" placeholder="Password" class="forms_field-input" required />
+                                <input id="signUpPassword" type="password" placeholder="Password" class="forms_field-input" required />
                             </div>
                         </div>
                         <div class="forms_buttons">
@@ -517,25 +517,101 @@
 
     <!-- script section -->
     <script>
-        // lets start js section  for shift object forms
+     
         const register_btn = document.getElementById('btn_signup'),
             signin_btn = document.getElementById('btn_login'),
             mainFormFields = document.getElementById('select_form_option')
 
-        // event listener for sign up btn 
         register_btn.addEventListener('click', () => {
             mainFormFields.classList.remove('shiftToRight')
             mainFormFields.classList.add('shiftToLeft')
         }, false)
 
-        // add event listner to sign in btn
+
         signin_btn.addEventListener('click', () => {
             mainFormFields.classList.remove('shiftToLeft')
             mainFormFields.classList.add('shiftToRight')
         }, false)
 
+        const signUpForm = document.getElementById('signUpForm');
+
+        signUpForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('signUpEmail').value;
+        const password = document.getElementById('signUpPassword').value;
+
+        const formData = {
+            fullName: fullName,
+            email: email,
+            password: password
+        };
+
+        console.log(formData);
+        // alert('Form data:', formData);
+        try {
+            const response = await fetch('http://localhost:3000/api/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            console.log('Response: ' + response)
+            console.log('Response status: ', response.status); 
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Sign up successful:', result);
+                alert('Sign up successful!');
+            } else {
+                const error = await response.json();
+                console.error('Sign up failed:', error);
+                alert('Sign up failed: ' + (error.message || 'Unknown error'));
+            }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        const formData = {
+            email: email,
+            password: password
+        };
+
+        try{
+            const response = await fetch('http://localhost:3000/api/auth/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            console.log(response);
+            console.log(response.status)
+            if(response.ok) {
+                const result = await response.json();
+                console.log('Sign in successful:', result);
+            } else {
+                const error = await response.json();
+                console.error('Sign up failed:', error);
+            }
+
+        } catch(error){
+            console.log('Error signing in ' + error);
+        }
+        });
+
     </script>
-    <!-- script section end -->
     
 </body>
 <footer>

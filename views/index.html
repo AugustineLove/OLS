@@ -27,39 +27,14 @@
 
     <!-- header -->
     <header>
-        
-        <!-- <nav class="navbar">
-            
-            <img src="../img/logo.png" class="logo" alt="">
+       
+        <div class="nav-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-        
-            <ul class="links-container">
-                <li class="link-items"><a href="#" class="links">menu</a></li>
-                <li class="link-items"><a href="ordering.html" class="links">order</a></li>
-                <li class="link-items"><a href="../views/restaurants.html" class="links">restaurants</a></li>
-                <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
-            </ul>
-
-            <div class="nav-extras">
-              
-                <div class="search">
-                    <input type="text" class="search-box" placeholder="Search Restaurants, Cuisine.....">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-
-              
-                <a href="ordering.html" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
-                <div class="nav-toggler">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav> -->
-
-        <nav id="myNav"></nav>
-        
+        <!-- main section -->
 
         <main id="hero-section">
             <!-- hero content -->
@@ -528,56 +503,8 @@
 
     </div>
 
-    <script>
-        function navBar (){
-            const newDiv = document.createElement('div');
-
-            const navBar = document.createElement('nav');
-            navBar.className = 'navbar';
-
-            const navBarContent = `
-            <img src="../img/logo.png" class="logo" alt="">
-
-            <!-- links -->
-            <ul class="links-container">
-                <li class="link-items"><a href="#" class="links">menu</a></li>
-                <li class="link-items"><a href="ordering.html" class="links">order</a></li>
-                <li class="link-items"><a href="../views/restaurants.html" class="links">restaurants</a></li>
-                <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
-            </ul>
-
-            <div class="nav-extras">
-                <!-- search box -->
-                <div class="search">
-                    <input type="text" class="search-box" placeholder="Search Restaurants, Cuisine.....">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-
-                <!-- cart icon -->
-                <a href="ordering.html" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
-                <div class="nav-toggler">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            `;
-            navBar.innerHTML = navBarContent;
-            newDiv.appendChild(navBar);
-
-            document.getElementById("myNav").appendChild(newDiv);
-        }
-        navBar();
-    </script>
-
     <script src="../components/footer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const footer = new Footer();
-            footer.render();
-        });
-    </script>
+    <script src="../components/navBar.js"></script>
 
 
     <!-- scripts -->

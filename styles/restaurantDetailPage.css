@@ -1,0 +1,46 @@
+
+.page{
+    margin: 100px 80px 40px 80px;
+}
+
+.shopDetails{
+    display: flex;
+    height: 500px;
+    background-color: rgb(236, 236, 236);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.info{
+    width: 60%;
+}
+h2{
+    margin-top: 30px;
+    font-size: 15px;
+}
+.aboutInfo{
+    font-size: 14px;
+}
+.profile {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+.profileImg{
+    width: 90%;
+    height: 100%;
+    object-fit: fill;
+
+}
+
+.menu{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    
+    justify-content: center;
+}
+.menuItem{
+    display: flex;
+    flex-direction: column;
+}

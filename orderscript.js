@@ -112,7 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Existing code...
-});document.addEventListener('DOMContentLoaded', () => {
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     // Existing code...
 
     checkoutBtn.addEventListener('click', () => {
