@@ -1,0 +1,33 @@
+
+h1{
+    text-align: center;
+}
+
+h2 {
+    color: green;
+}
+.order {
+    width: 50%; 
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.order span {
+    font-size: 20px;
+}
+
+.info{
+    display: flex;
+}
+
+.info strong{
+    width: 150px;
+    display: inline-block;
+}
+.info p{
+    margin-right: 90px;
+    display: inline-block;
+    width: 250px;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="../styles/orderForm.css">
+</head>
+<body>
+    
+    <div id="orderSuccess" class="orderSuccess">
+        Order successfully made!
+    </div>
+
+    <div class="heading">
+        <h1>Order from <span id="res">Shalom</span></h1>
+    </div>
+    
+    <div class="formDetails">
+        <div class="title">
+            <p>Fill the order form below to complete your purchase</p>
+        </div>
+
+        <div class="info">
+            <div class="checkout">
+                <div class="question">
+                    <div class="number">
+                        <span>1</span>
+                    </div>
+                    Your basic information
+                </div>
+
+                <form id="orderForm">
+                    <input id="firstName" type="text" placeholder="First Name" required>
+                    <input id="lastName" type="text" placeholder="Last Name" required>
+                    <div style="margin-top: 20px"></div>
+                    <input id="foodName" type="text" placeholder="Food" required>
+                    <input id="foodPrice" type="text" placeholder="Amount" required>
+                    
+                    <div style="margin-top: 20px"></div>
+
+                    <div class="question">
+                        <div class="number">
+                            <span>2</span>
+                        </div>
+                        Your Location Details
+                    </div>
+                    <input id="phone" type="text" placeholder="Phone Number" required>
+                    <input id="city" type="text" placeholder="City" required>
+                    <div style="margin-top: 20px"></div>
+
+                    <input id="addressDescription" class="addressDes" type="text" placeholder="Describe address" required>
+                    <button type="submit">Checkout</button>
+                </form>
+            </div>
+
+            <div class="thankYou">
+                <h1>Thank you for your order</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search)
+        const restaurantName = urlParams.get('shop')
+        console.log(restaurantName);
+        const resToOrder = document.getElementById('res')
+        resToOrder.innerHTML = restaurantName
+        const orderForm = document.getElementById('orderForm');
+        orderForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const urlParams = new URLSearchParams(window.location.search)
+        
+            const shopName = urlParams.get('shop')
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const foodName = document.getElementById('foodName').value;
+            const foodPrice = document.getElementById('foodPrice').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const addressDescription = document.getElementById('addressDescription').value;
+
+            const orderData = {
+                shopName: shopName,
+                firstName: firstName,
+                lastName: lastName,
+                foodName: foodName,
+                foodPrice: foodPrice,
+                phone: phone,
+                city: city,
+                addressDescription: addressDescription
+            }
+
+            try {
+                const response = await fetch('https://ols-backend.onrender.com/api/restaurants/order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                console.log('Response:', response);
+
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Order created successfully:', result);
+                    let timeoutId;
+                    const orderSuccess = document.getElementById('orderSuccess');
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                    orderSuccess.style.display = 'block';
+                    orderSuccess.innerHTML = 'Order successfully made!';
+                    setTimeout(() => {
+                    orderSuccess.style.display = 'none'; 
+                    }, 8000); 
+                    });
+
+                    window.location.reload()
+                } else {
+                    const error = await response.json();
+                    console.error('Order creation failed:', error);
+                    alert('Order creation failed: ' + (error.message || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

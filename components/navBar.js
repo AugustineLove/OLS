@@ -7,6 +7,11 @@ class NavBar {
     createNavBar() {
         const navBar = document.createElement('nav');
         navBar.className = 'navbar';
+
+        const userMail = localStorage.getItem('email')        
+        const userName = localStorage.getItem('name')
+        const firstLetter = userMail.charAt(0).toUpperCase()
+        
     
         const navBarContent = `
             <img src="../img/logo.png" class="logo" alt="Logo">
@@ -19,11 +24,13 @@ class NavBar {
                 <li class="link-items"><a href="login.html" class="links">Login</a></li>
             </ul>
     
-            <div class="nav-extras">
-                <!-- search box -->
+            <div class="nav-extras">            
+                
                 <div class="search">
-                    <input type="text" class="search-box" placeholder="Search Restaurants, Cuisine...">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="avatar"> <p>${firstLetter}</p></div>
+                   <div> <p>${userName}</p>
+                    <p id="email">${userMail}</p>
+                    </div>
                 </div>
     
                 <!-- cart icon -->

@@ -18,7 +18,7 @@ function createShopVendor(shop) {
             <p>Delivery Distance : ${shop.deliveryDistance}</p>
             <p>Delivery Fee: ${shop.deliveryFee}</p>
         </div>
-        <a href = "../views/restaurantDetailsPage.html"><button class="viewShopButton" >View Shop</button></a>
+        <a href = "../views/restaurantDetailsPage.html?name=${shop.name}&address=${shop.address}&contact=${shop.contact}&imgUrl=${shop.imgSrc}"><button class="viewShopButton" >View Shop</button></a>
     `;
 
     shopDetails.innerHTML = shopContent;
@@ -32,101 +32,123 @@ function createShopVendor(shop) {
     img.alt = '';
     shopThumbnail.appendChild(img);
 
-    // Append shopDetails and shopThumbnail to shopVendor
+
     shopVendor.appendChild(shopDetails);
     shopVendor.appendChild(shopThumbnail);
 
-    // Append shopVendor to the container
     document.getElementById('shopContainer').appendChild(shopVendor);
 }
 
-// Sample shop data
+
 const shops = [
     {
         name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        address: '10th clise Dansoman Accra Greater Accra',
         cuisine: 'Ghanaian, African',
         contact: '0302907709',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: "https://th.bing.com/th/id/OIP.VtipTb-Jt0wS1kO7o8yHpgHaFi?w=206&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7https://th.bing.com/th/id/OIP.VtipTb-Jt0wS1kO7o8yHpgHaFi?w=206&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: 'Davi Ama',
+        address: '10th clise Dansoman Takoradi Station',
         cuisine: 'Ghanaian, African',
-        contact: '0302907709',
-        deliveryEst: 'not available',
+        contact: '0508250183',
+        deliveryEst: 'Available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: "https://th.bing.com/th/id/OIP.ECVTPG-nXpZfQp_MVJcf_wHaHa?w=154&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: 'Ambrosia',
+        address: 'Agona Nkwanta Zen Filling Station',
         cuisine: 'Ghanaian, African',
-        contact: '0302907709',
+        contact: '0593528296',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: "https://th.bing.com/th/id/OIP.GhRBHd2kHl2OyMvMR1O7JgHaE0?w=253&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: 'Shalin',
+        address: '10th La Bonita Agona Nkwanta',
         cuisine: 'Ghanaian, African',
         contact: '0302907709',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: '../img/restaurant-4.png'
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: 'Davi',
+        address: 'Home Accra Greater Accra',
         cuisine: 'Ghanaian, African',
         contact: '0302907709',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: '../img/restaurant-5.png'
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: 'MargTee',
+        address: 'Legon Accra Greater Accra',
         cuisine: 'Ghanaian, African',
-        contact: '0302907709',
+        contact: '0554784452',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: '../img/restaurant-6.png'
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: 'MeLuvs',
+        address: '10th clise Dansoman Accra Greater Accra',
         cuisine: 'Ghanaian, African',
         contact: '0302907709',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: "https://th.bing.com/th/id/OIP.ItJJ4cW5Q0lu2saOLBS7ZwAAAA?pid=ImgDet&w=181&h=181&c=7&dpr=1.4"
     },
     {
-        name: 'Shalom Fast Food',
-        address: '10th clise Dansoman Accra Greater Accra 0558382783',
+        name: "Pat's hots kitchen",
+        address: '10th clise Dansoman Accra Greater Accra',
         cuisine: 'Ghanaian, African',
         contact: '0302907709',
         deliveryEst: 'not available',
         deliveryDistance: '50.0',
         deliveryFee: 'Free Delivery',
-        imgSrc: '../img/restaurant-2.png'
+        imgSrc: "https://th.bing.com/th/id/OIP.ItJJ4cW5Q0lu2saOLBS7ZwAAAA?pid=ImgDet&w=181&h=181&c=7&dpr=1.4"
     },
-    // Add more shops as needed
+
 ];
 
-// Render the shopVendor divs
-
 document.addEventListener('DOMContentLoaded', () => {
-    shops.forEach(shop => createShopVendor(shop));
-});
+    const searchInput = document.getElementById("searchRes");
+    const restaurantsContainer = document.getElementById("shopContainer");
+    let timeoutId;
+  
+  
+
+    const displayAllShops = () => {
+      shops.forEach(shop => createShopVendor(shop));
+    };
+  
+    displayAllShops();
+  
+
+    searchInput.addEventListener('input', () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const searchValue = searchInput.value.toLowerCase();
+        restaurantsContainer.innerHTML = ''; 
+        shops.forEach(shop => {
+          if (shop.name.toLowerCase().includes(searchValue)) {
+            createShopVendor(shop);
+          }
+        });
+      }, 500); 
+    });
+  });
+  

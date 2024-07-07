@@ -44,14 +44,14 @@
                     culture</p>
 
                 <div class="search location">
-                    <input type="text" class="search-box" placeholder="Search your location...">
-                    <button class="locate-btn"><i class="fa-solid fa-location-crosshairs"></i></button>
+                    <input type="text" class="search-box" placeholder="Browse through our site...">
+                    <!-- <button class="locate-btn"><i class="fa-solid fa-location-crosshairs"></i></button> -->
                 </div>
 
                 <div class="hero-action-btn-container">
-                    <button  class="btn">order food</button>
+                    <button id="oderBtn" class="btn">order food</button>
                     <p class="or">or</p>
-                    <button class="btn transparent">make reservation</button>
+                    <button id="makReserve" class="btn transparent">make reservation</button>
                 </div>
             </div>
 
@@ -140,7 +140,7 @@
                 <p class="section-info">Order from our 1000+ restaurants with an endless food and beverages. Food for every taste and mood.
                 </p>
 
-                <button class="btn">order food</button>
+                <button id="oderBtnM" class="btn">order food</button>
             </div>
         </div>
 
@@ -503,11 +503,55 @@
 
     </div>
 
+    <script>
+
+        const orderBtnH = document.getElementById("oderBtn")
+        const orderBtnM = document.getElementById('oderBtnM')
+        const userAuthToken = localStorage.getItem('authToken')
+        if(userAuthToken){
+            tokenLen = userAuthToken.length
+        }
+        else{
+            tokenLen = 0;
+        }
+        console.log('token: ' + userAuthToken)
+        orderBtnH.addEventListener('click', ()=>{
+        if (tokenLen > 0){
+            window.location.href = '../views/restaurants.html'   
+        } else{
+            window.location.href = '../views/login.html?display=block'
+        }
+        })
+        orderBtnM.addEventListener('click', ()=>{
+        if (tokenLen > 0){
+            window.location.href = '../views/restaurants.html'   
+        } else{
+            window.location.href = '../views/login.html?display=block'
+        }
+        })
+        const makReserveH = document.getElementById("makReserve")
+        makReserveH.addEventListener('click', ()=>{
+            if (tokenLen > 0){
+            window.location.href = '../views/ordering.html' 
+        } else{
+            window.location.href = '../views/login.html?display=block'
+        }
+            
+        })
+
+
+        uname = localStorage.getItem('name')
+        email = localStorage.getItem('email')
+        if(!uname){
+            localStorage.setItem('name', 'Sign in')
+        }        
+        if(!email){
+            localStorage.setItem('email', 'Create an account with us')
+        }
+    </script>
+
     <script src="../components/footer.js"></script>
     <script src="../components/navBar.js"></script>
-
-
-    <!-- scripts -->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../app.js"></script>

@@ -12,12 +12,15 @@ function dishFun (dishes){
                 <h3>${dishes.header}</h3>
                 <p>GH₵ ${dishes.price} ★</p>
                 <p>${dishes.name}</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <button id="addToCart" class="add-to-cart-btn">Add to Cart</button>
     `;
     aDish.innerHTML = aDishContent;
-
     dish.appendChild(aDish);
     document.getElementById("dish").appendChild(dish);
+    const bTn = document.getElementById("addToCart")
+    bTn.addEventListener('click', () => {
+        console.log('Clicked')
+    })
 }
 
 
