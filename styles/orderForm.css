@@ -121,3 +121,106 @@ body::before {
     align-content: center;
     text-align: center;
 }
+
+@media (max-width: 820px) {
+    .formDetails {
+        background-color: white;
+        margin: auto;
+        width: 90%;
+        height: 60vh;
+        z-index: 2;
+        position: relative; 
+        top: 15vh;
+    }
+    .info {
+        display: flex;
+        height: 70vh;
+    }
+    .checkout {
+        width: 65%;
+        height: 52vh;
+        border-right: 2px solid grey;
+        padding: 20px;
+    }
+    .checkout input{
+        height: 25px;
+        margin-right: 10px;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .checkout button{
+        background-color: orange;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+       width: 35%;
+       margin-left: 35%;
+       margin-top: 40px
+    }
+    .checkout button:hover{
+        background-color: rgb(0, 214, 0);
+        cursor: pointer;
+    }
+
+    .thankYou{
+        width: 30%;
+        height: 55vh;
+        align-content: center;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .formDetails {
+        background-color: white;
+        margin: auto;
+        width: 90%;
+        height: 80vh;
+        z-index: 2;
+        position: relative; 
+        top: 15vh;
+    }
+    .info {
+        display: flex;
+        height: 70vh;
+    }
+    .checkout {
+        width: 65%;
+        height: 69.5vh;
+        border-right: 2px solid grey;
+        padding: 20px;
+    }
+    .checkout input{
+        height: 25px;
+        margin-right: 10px;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    .checkout button{
+        background-color: orange;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+       width: 35%;
+       margin-left: 35%;
+       margin-top: 10px
+    }
+    .checkout button:hover{
+        background-color: rgb(0, 214, 0);
+        cursor: pointer;
+    }
+
+    .thankYou{
+        width: 30%;
+        height: 55vh;
+        align-content: center;
+        text-align: center;
+        font-size: 14px;
+    }
+}

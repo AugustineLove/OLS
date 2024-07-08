@@ -191,6 +191,8 @@ button{
     background: var(--alpha-secondary-color);
 }
 
+
+
 #hero-section{
     min-height: 100vh;
     padding: 0 10vw;
@@ -1474,84 +1476,70 @@ section {
 
 @media (max-width: 820px) {
 
-    /* navbar */
+   /* navbar */
+.nav-toggler {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: .5s;
+    transition-timing-function: cubic-bezier(0.36, -0.21, 0.16, 1.97);
+}
 
-     .nav-toggler{
-        display: block;
-        width: 2.5rem;
-        height: 2.5rem;
-        position: relative;
-        cursor: pointer;
-        transition: .5s;
-        transition-timing-function: cubic-bezier(0.36, -0.21, 0.16, 1.97);
-    }
+.nav-toggler span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: .1rem;
+    border-radius: 1rem;
+    background: var(--secondary-color);
+    transition: .5s;
+    transition-timing-function: cubic-bezier(0.36, -0.21, 0.16, 1.97);
+}
 
-    .nav-toggler span{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
-        height: .1rem;
-        border-radius: 1rem;
-        background: var(--secondary-color);
-        transition: .5s;
-        transition-timing-function: cubic-bezier(0.36, -0.21, 0.16, 1.97);
-    }
+.nav-toggler span:nth-child(1) {
+    top: 30%;
+}
 
-    .nav-toggler span:nth-child(1){
-        top: 30%;
-    }
+.nav-toggler span:nth-child(3) {
+    top: 70%;
+}
 
-    .nav-toggler span:nth-child(3){
-        top: 70%;
-    }
+.links-container {
+    display: block;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    margin-left: 0;
+    position: absolute;
+    background: var(--accent-color);
+    transition: .5s;
+    z-index: -1;
+    height: 0;
+    overflow: hidden;
+}
 
-    .nav-toggler.active span:nth-child(1){
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
+.nav-toggler:hover .links-container {
+    height: 15rem;
+    z-index: 1;
+}
 
-    .nav-toggler.active span:nth-child(3){
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-    }
+.links-container .link-items {
+    text-align: right;
+}
 
-    .nav-toggler.active span:nth-child(2){
-        width: 0;
-    }
+.links-container .links {
+    display: block;
+    padding: 1.2rem 10vw;
+}
 
-    .links-container{
-        display: block;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        margin-left: 0;
-        position: absolute;
-        background: var(--accent-color);
-        transition: .5s; 
-        z-index: -1;
-        height: 0;
-        overflow: hidden;
-    }
-
-    .links-container.active{
-        height: 15rem;
-    }
-
-    .links-container .link-items{
-        text-align: right;
-    }
-
-    .links-container .links{
-        display: block;
-        padding: 1.2rem 10vw;
-    }
-
-    .links-container .links:hover{
-        background: var(--primary-color);
-        color: var(--secondary-text-color);
-    }
+.links-container .links:hover {
+    background: var(--primary-color);
+    color: var(--secondary-text-color);
+}
     
     /* hero section */
 
@@ -1621,6 +1609,21 @@ section {
     .dish-slider{
         display: none;
     }
+    .search{
+        width: 29vw;
+
+    }
+    .search p{
+        font-size: 13px;
+    }
+    .search #email {
+        color: grey;
+        font-size: 13px;
+    }
+    .avatar{
+        width: 30px;
+        height: 30px;
+    }
     
 }
 
@@ -1646,6 +1649,22 @@ section {
     .restaurants-container, .service-container{
         grid-template-columns: 1fr;
     }
+    .search{
+        width: 18vw;
+        /* background-color: red; */
+        text-align: center;
+    }
+    .search p{
+        font-size: 9px;
+    }
+    .search #email {
+        color: grey;
+        font-size: 9px;
+    }
+    .avatar{
+        display: none;
+    }
+
 
 }
 
