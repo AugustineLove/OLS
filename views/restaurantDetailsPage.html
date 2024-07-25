@@ -56,15 +56,16 @@
 
         
 
-        const menuItem = document.createElement('div');
+        function createMenuOrderItem(foodItem){
+            const menuItem = document.createElement('div');
         menuItem.className = 'menuItem';
 
         const itemImg = document.createElement('img');
-        itemImg.src = '../img/restaurant-2.png';
+        itemImg.src = foodItem.itemImg;
 
         const btn = document.createElement('div');
         const foodName = document.createElement('h3');
-        foodName.innerHTML = 'Jollof Rice'; 
+        foodName.innerHTML = foodItem.foodName; 
         const btnContent = `<button>Make order</button>`;
         btn.innerHTML = btnContent;   
         
@@ -92,6 +93,25 @@
         menuItem.appendChild(btn);
 
         document.getElementById('menu').appendChild(menuItem);
+        }
+
+        const menuOrderItems = [
+            {
+                itemImg: '../img/restaurant-2.png',
+                foodName: 'Jollof Rice',
+            },
+            {
+                itemImg: '../img/restaurant-3.png',
+                foodName: 'Fried Rice',
+            },
+            {
+                itemImg: '../img/restaurant-4.png',
+                foodName: 'Yellow Rice',
+            },
+        ]
+
+        menuOrderItems.forEach((food) => createMenuOrderItem(food))
+
     </script>
     <script src="../components/navBar.js"></script>
     <script src="../components/footer.js"></script>
