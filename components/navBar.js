@@ -35,11 +35,27 @@ class NavBar {
     
                 <!-- cart icon -->
                 <a href="ordering.html" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+
     
                 <div class="nav-toggler">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                   <div class="dropdown">
+                    <button class="dropbtn">☰</button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home</a>
+                        <a href="ordering.html">Order</a>
+                        <a href="restaurants.html">Restaurants</a>
+                        <a href="login.html">Login</a>
+                    </div>
+                    </div>
+                    
+                    <!-- links -->
+                    <ul class="links-container">
+                        <li class="link-items"><a href="#" class="links">menu</a></li>
+                        <li class="link-items"><a href="#" class="links">order</a></li>
+                        <li class="link-items"><a href="#" class="links">restaurants</a></li>
+                        <li class="link-items"><a href="login.html" class="links">LOGIN</a></li>
+                    </ul>
                 </div>
             </div>
         `;
